@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+    char s[30];
+    scanf("%s",s);
+    int a[26],max=0;
+    for(int i=0;i<strlen(s);i++)
+    {
+        a[s[i]-'a']++;
+    }
+    
+    
+    for(int i=0;i<26;i++)
+    {
+       if(max<a[i]) 
+       {
+          max=a[i];
+       }
+    }
+    
+    for(int i=0;i<26;i++)
+    {
+        if(a[i]==max)
+        {
+            printf("%c",i+'a');
+        }
+    }
+
+    return 0;
+}
